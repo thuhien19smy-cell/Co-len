@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ScreenId, TicketPackage } from '../types';
-import logoDaiTiec from '../assets/images/regenerated_image_1789060052005.jpg';
+import logoDaiTiec from '../assets/images/regenerated_image_transparent.png';
 import {
   EVENT_INFO,
   OFFICIAL_TIMELINE,
@@ -101,12 +101,13 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
         <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8 py-6">
           {/* LOGO CHÍNH TÂM HERO - NGUYÊN BẢN GỐC KHÔNG CROP KHÔNG MÉO */}
           <div className="flex flex-col items-center justify-center space-y-4">
-            <div className="relative flex items-center justify-center">
+            <div className="relative flex items-center justify-center p-1 sm:p-1.5 rounded-full border border-[#C9A24A]/70 bg-[#090A0D]/70 shadow-[0_0_35px_rgba(201,162,74,0.3),0_0_70px_rgba(90,11,16,0.55)]">
               <img
+                id="hero-logo-image"
                 src={logoSrc}
                 alt="Đại Tiệc Âm Dương - Giao Thoa Hai Cõi"
                 referrerPolicy="no-referrer"
-                className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 max-w-full aspect-square object-cover rounded-full [clip-path:circle(45.5%_at_48%_50%)] mx-auto drop-shadow-[0_0_30px_rgba(201,162,74,0.35)] drop-shadow-[0_0_60px_rgba(90,11,16,0.6)] select-none"
+                className="w-52 h-52 sm:w-60 sm:h-60 md:w-68 md:h-68 lg:w-76 lg:h-76 max-w-full aspect-square object-contain rounded-full mx-auto drop-shadow-[0_0_25px_rgba(201,162,74,0.35)] select-none transition-transform duration-500 hover:scale-105"
               />
             </div>
 
@@ -355,10 +356,8 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
             {OFFICIAL_TICKETS.map((pkg) => (
               <div
                 key={pkg.id}
-                className={`relative bg-[#090A0D] border-2 p-6 sm:p-7 lg:p-8 flex flex-col justify-between space-y-6 transition-all hover:-translate-y-1 ${
-                  pkg.popular
-                    ? 'border-[#C9A24A] shadow-[0_0_35px_rgba(201,162,74,0.3)] bg-gradient-to-b from-[#1E090D] via-[#090A0D] to-[#090A0D]'
-                    : 'border-[#3A080B] hover:border-[#C9A24A]/60'
+                className={`relative border-2 border-[#C9A24A] bg-gradient-to-b from-[#1E090D] via-[#090A0D] to-[#090A0D] shadow-[0_0_35px_rgba(90,11,16,0.45),0_0_20px_rgba(201,162,74,0.25)] p-6 sm:p-7 lg:p-8 flex flex-col justify-between space-y-6 transition-all hover:-translate-y-1 hover:shadow-[0_0_45px_rgba(107,17,24,0.65),0_0_25px_rgba(201,162,74,0.35)] ${
+                  pkg.popular ? 'ring-1 ring-[#C9A24A]/50' : ''
                 }`}
                 style={{ borderRadius: 0 }}
               >
@@ -368,7 +367,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
                 <AntiqueCorner position="bottom-right" size={16} />
 
                 {pkg.popular && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-0.5 bg-[#C9A24A] text-[#080808] font-mono font-bold text-[10px] tracking-widest uppercase whitespace-nowrap">
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-0.5 bg-[#C9A24A] text-[#080808] font-mono font-bold text-[10px] tracking-widest uppercase whitespace-nowrap shadow-[0_0_12px_#C9A24A]">
                     ĐƯỢC CHỌN NHIỀU NHẤT
                   </div>
                 )}
@@ -405,9 +404,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
                 <div className="pt-4 border-t border-[#3A080B]">
                   <button
                     onClick={() => handleOpenBooking(pkg)}
-                    className={`w-full min-h-[44px] py-3.5 font-headline font-bold text-xs uppercase tracking-[0.2em] flex items-center justify-center gap-2 whitespace-nowrap ${
-                      pkg.popular ? 'btn-primary-sharp' : 'btn-secondary-sharp'
-                    }`}
+                    className="w-full min-h-[44px] py-3.5 font-headline font-bold text-xs uppercase tracking-[0.2em] flex items-center justify-center gap-2 whitespace-nowrap btn-primary-sharp"
                   >
                     <Ticket size={14} className="shrink-0" />
                     <span className="whitespace-nowrap">ĐẶT VÉ</span>

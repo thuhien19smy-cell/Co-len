@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ScreenId } from '../types';
 import { YinYangIcon, LotusIcon, WaxSealBadge } from './RitualDecorations';
 import { Moon, Menu, X } from 'lucide-react';
-import newLogoImage from '../assets/images/regenerated_image_1789060052005.jpg';
+import newLogoImage from '../assets/images/regenerated_image_transparent.png';
 
 interface NavigationProps {
   currentScreen: ScreenId;

@@ -2,7 +2,7 @@ import React from 'react';
 import { ScreenId } from '../types';
 import { Moon, Phone, MapPin } from 'lucide-react';
 import { EVENT_INFO } from '../data/mockData';
-import logoDaiTiec from '../assets/images/th.jpg';
+import logoDaiTiec from '../assets/images/regenerated_image_transparent.png';
 
 interface FooterProps {
   onNavigate?: (screen: ScreenId) => void;
